@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Tour, getTourTransportDetails } from '../../models/tour.model';
 
 @Component({
   selector: 'app-tour-list',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, FormsModule],
   templateUrl: './tour-list.component.html',
   styleUrls: ['./tour-list.component.scss']
 })
@@ -30,6 +31,18 @@ export class TourListComponent {
   ];
 
   selectedTour: Tour | null = null;
+
+  searchInput: string = '';
+
+  get filteredTours(): Tour[] {
+    if (!this.searchInput) {
+      return this.tours;
+    }
+    const lowerCaseSearch = this.searchInput.toLowerCase();
+    return this.tours.filter(tour => 
+      tour.name.toLowerCase().includes(lowerCaseSearch)
+    );
+  }
 
   onSelectTour(tour: Tour): void {
     this.selectedTour = tour;
