@@ -18,7 +18,11 @@ export class TourListComponent {
       distance: 15.5, 
       description: 'A beautiful trail through the hills.', 
       transport: { type: 'hike', difficultyLevel: 3 }, 
-      reviews: [] 
+      reviews: [
+        { tourName: 'Vienna Woods Hike', rating: 5, description: 'Amazing views! A bit muddy after the rain, though.' },
+        { tourName: 'Vienna Woods Hike', rating: 4, description: 'Good elevation gain. Definitely wear proper boots.' },
+        { tourName: 'Vienna Woods Hike', rating: 2, description: 'I dont like hiking.' },
+      ] 
     },
     { 
       id: 2, 
@@ -26,7 +30,9 @@ export class TourListComponent {
       distance: 42.0, 
       description: 'Flat, paved path running alongside the river.', 
       transport: { type: 'bike', bikeType: 'road' }, 
-      reviews: [] 
+      reviews: [
+        { tourName: 'Danube Bike Trail', rating: 5, description: 'Perfect asphalt all the way. Great for speed!' },
+      ] 
     }
   ];
 
