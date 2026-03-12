@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tour, getTourTransportDetails } from '../../models/tour.model';
+import { UserReviewComponent } from '../user-review/user-review.component';
 
 @Component({
   selector: 'app-tour-list',
   standalone: true,
-  imports: [NgClass, FormsModule],
+  imports: [NgClass, FormsModule, UserReviewComponent],
   templateUrl: './tour-list.component.html',
   styleUrls: ['./tour-list.component.scss']
 })
@@ -19,9 +20,21 @@ export class TourListComponent {
       description: 'A beautiful trail through the hills.', 
       transport: { type: 'hike', difficultyLevel: 3 }, 
       reviews: [
-        { tourName: 'Vienna Woods Hike', rating: 5, description: 'Amazing views! A bit muddy after the rain, though.' },
-        { tourName: 'Vienna Woods Hike', rating: 4, description: 'Good elevation gain. Definitely wear proper boots.' },
-        { tourName: 'Vienna Woods Hike', rating: 2, description: 'I dont like hiking.' },
+        { 
+          user: { id: 101, username: 'Matej Krsteski' },
+          rating: 5, 
+          description: 'Amazing views! A bit muddy after the rain, though.' 
+        },
+        { 
+          user: { id: 102, username: 'Anna Müller' }, 
+          rating: 4, 
+          description: 'Good elevation gain. Definitely wear proper boots.' 
+        },
+        { 
+          user: { id: 101, username: 'John' }, 
+          rating: 2, 
+          description: 'I dont like to hike...' 
+        }
       ] 
     },
     { 
@@ -31,7 +44,11 @@ export class TourListComponent {
       description: 'Flat, paved path running alongside the river.', 
       transport: { type: 'bike', bikeType: 'road' }, 
       reviews: [
-        { tourName: 'Danube Bike Trail', rating: 5, description: 'Perfect asphalt all the way. Great for speed!' },
+        { 
+          user: { id: 101, username: 'Matej Krsteski' }, 
+          rating: 5, 
+          description: 'Perfect asphalt all the way. Great for speed!' 
+        }
       ] 
     }
   ];

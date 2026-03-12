@@ -1,7 +1,10 @@
+import { User } from './user.model';
+
 export interface Review {
     description: string;
-    tourName: string; 
     rating: number; 
+    // tourName: string;
+    user: User;
 }
 
 export interface BikeTransport {
