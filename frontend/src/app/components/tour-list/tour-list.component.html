@@ -54,10 +54,8 @@
           ← Back to List
         </button>
 
-        <div class="flex-1 bg-blue-100 border-b relative">
-          <div class="absolute inset-0 flex items-center justify-center text-blue-400 font-bold text-2xl">
-            🗺️ LEAFLET MAP AREA
-          </div>
+        <div class="flex-1 border-b relative">
+          <app-map></app-map>
         </div>
 
         <div class="h-1/3 bg-white p-6 overflow-y-auto">
@@ -85,7 +83,7 @@
             <h3 class="text-lg font-bold text-gray-800 mb-3">Tour Reviews</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              
+              <!-- Maybe use ID when implement Database instead of index bcs its better performance -->
               @for (review of selectedTour.reviews; track $index) {
                 
                 <app-user-review [review]="review"></app-user-review>

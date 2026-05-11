@@ -3,11 +3,12 @@ import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tour, getTourTransportDetails } from '../../models/tour.model';
 import { UserReviewComponent } from '../user-review/user-review.component';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-tour-list',
   standalone: true,
-  imports: [NgClass, FormsModule, UserReviewComponent],
+  imports: [NgClass, FormsModule, UserReviewComponent, MapComponent],
   templateUrl: './tour-list.component.html',
   styleUrls: ['./tour-list.component.scss']
 })
